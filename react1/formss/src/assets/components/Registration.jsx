@@ -1,10 +1,14 @@
 import React from "react";
 import { Formik, useFormik } from "formik";
+import { studentFormSchema } from "./schema";
 
 
 function Registration() {
     const onSubmit = (values, {resetForm}) => {
-        console.log(values)
+        console.log("submitting")
+        setTimeout(()=>{
+            console.log("submitted")
+        }, 3000)
         resetForm()
     }
     const formik = useFormik({
@@ -12,10 +16,11 @@ function Registration() {
             firstName:'',
             lastName:'',
             email:'',
-            password:'',
+            yob:'',
             course:'',
             county:''
         },
+        validationSchema:studentFormSchema,
         onSubmit 
     })
     
@@ -34,8 +39,10 @@ function Registration() {
                             placeholder="First Name"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.firstName} 
+                            value={formik.values.firstName}
+                            style={formik.errors.firstName && formik.touched.firstName ? {borderColor:"red"}: {}} 
                         />
+                        {formik.errors.firstName && formik.touched.firstName? <p className="error-message">{formik.errors.firstName}</p>:""} 
                     </div>
                     <div className="form-group col-md-6">
                         <label htmlFor="lastName">Last Name</label>
@@ -48,8 +55,11 @@ function Registration() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.lastName} 
+                            style={formik.errors.lastName && formik.touched.lastName ? {borderColor:"red"}: {}}
                         />
+                        {formik.errors.lastName && formik.touched.lastName? <p className="error-message">{formik.errors.lastName}</p>:""}
                     </div>
+                    
                 </div>
                 <div className="row">
                     <div className="form-group col-md-6">
@@ -63,7 +73,9 @@ function Registration() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.yob} 
+                            style={formik.errors.lastName && formik.touched.lastName ? {borderColor:"red"}: {}}
                         />
+                        {formik.errors.firstName && formik.touched.firstName? <p className="error-message">{formik.errors.firstName}</p>:""}
                     </div>
 
                     <div className="form-group col-md-6">
@@ -77,7 +89,9 @@ function Registration() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.email} 
+                            style={formik.errors.email && formik.touched.email ? {borderColor:"red"}: {}}
                         />
+                        {formik.errors.email && formik.touched.email? <p className="error-message">{formik.errors.email}</p>:""}
                     </div>
                 </div>
                 <div className="row">
@@ -92,7 +106,9 @@ function Registration() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.course} 
+                            style={formik.errors.course && formik.touched.course ? {borderColor:"red"}: {}}
                         />
+                        {formik.errors.course && formik.touched.course? <p className="error-message">{formik.errors.course}</p>:""}
                     </div>
                     <div className="form-group col-md-6">
                         <label htmlFor="county">County</label>
@@ -105,7 +121,9 @@ function Registration() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.county} 
+                            style={formik.errors.county && formik.touched.county ? {borderColor:"red"}: {}}
                         />
+                        {formik.errors.county && formik.touched.county? <p className="error-message">{formik.errors.county}</p>:""}
                     </div>
                 </div>
 

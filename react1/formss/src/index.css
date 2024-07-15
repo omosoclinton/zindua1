@@ -70,3 +70,10 @@ button:focus-visible {
 .regCard {
   background-color: #244855;
 }
+.error-message {
+  color: rgb(235, 70, 70);
+}
+
+.error-input {
+  border-color: rgb(235, 70, 70);
+}

@@ -6,7 +6,7 @@ function NavBar () {
    
     return (
         <>
-        <header className="site-header">
+        <header>
             <nav className="navbar navbar-expand-md navbar-dark fixed-top" style={{ backgroundColor: '#244855', padding: '15px', color:'black' }}>
                 <div className="container-fluid" style={{color:'black'}}>
                     <Link className="navbar-brand" to='/' >Countries Fact</Link>

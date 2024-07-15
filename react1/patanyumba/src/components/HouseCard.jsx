@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import house_image from '../assets/house_image.jpeg'
 import heart from '../assets/heart.svg'
 import frown from '../assets/frown.svg'
+import { Link } from "react-router-dom";
+import Modal from "./Modal";
 
 const Housecard = ({house}) =>{
     let [likes, setLikes] = useState(0)
@@ -45,7 +47,8 @@ const Housecard = ({house}) =>{
                         <h6 className="card-title">Price: {house.housePrice} Ksh</h6>
                         <p className={house.housePrice > 30000 ? "exp":"cheap"}>Category: {house.housePrice > 30000 ? "Expensive" : "Affordable"}</p>
                         <h6 className="card-title">Location: {house.location}</h6>
-                        <button type="button" className="btn btn-primary">Get House</button>
+                        <Modal/>
+                        {/* <Link type="button" className="btn btn-primary" to='/modalform'>Get House</Link> */}
                     </div>
                 </div>
                     : <div>

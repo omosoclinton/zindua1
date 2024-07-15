@@ -7,6 +7,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Home from './pages/Home.jsx';
 import Landing from './pages/Landing.jsx';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import Modal from './components/Modal.jsx';
+import Form from './components/Form.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
   {
     path:'/houses',
     element:<Home/>
+  },
+  {
+    path:'/modalform',
+    element:<Form/>
   }
 ])
 

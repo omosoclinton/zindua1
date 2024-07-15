@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./Form";
+import { Link } from "react-router-dom";
 
 const Modal= () => {
     return(
@@ -7,10 +8,10 @@ const Modal= () => {
             {/* Button trigger modal */}
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Add a house
-            </button>
+            </button> 
 
             {/* Modal */}
-            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" style={{margin:'10px'}} tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade" id="staticBackdrop" data-bs-focus='false' data-bs-backdrop="static" data-bs-keyboard="false" style={{margin:'10px'}} tabIndex='-1' aria-labelledby="staticBackdropLabel">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
