@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import { houseFormSchema } from "../schema";
+import app from "../firebaseconfig";
+import { getDatabase, ref, set, push } from "firebase/database";
+
+
+
 const Form = () => {
-    const onSubmit = (values, { setSubmitting, resetForm }) => {
-        console.log('Submitted')
-        setSubmitting(false)
-        resetForm()
+    const onSubmit = async (values) => {
+        const db = getDatabase(app)
+        const newDocRef = push(ref(db, "patanyumba/houses"));
+        set(newDocRef, {
+            size: values.size,
+            price: values.price,
+            location: values.location,
+            description: values.description,
+            image_url: values.image_url,
+            house_name:values.house_name
+
+        }).then((resp) => {
+            console.log(resp)
+            alert("Data saved")
+        }).catch((err) => {
+            console.log("Error")
+            alert("Error")
+        })
+
+        //resetForm()
     }
     const { handleChange, handleSubmit, handleBlur, setSubmitting, values, errors, isSubmitting, touched } = useFormik({
         initialValues: {
+            house_name: '',
             price: '',
-            price: '',
+            size: '',
             location: '',
             description: '',
             image_url: ''
@@ -24,6 +46,21 @@ const Form = () => {
             <div className="container">
                 <form className="card" onSubmit={handleSubmit}>
                     <div className="row">
+                        <div className="form-group col-md-6">
+                            <label for="size" className="form-label">House Name</label>
+                            <input
+                                type="text"
+                                name='house_name'
+                                className="form-control"
+                                id="house_name"
+                                placeholder="House Name"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.house_name}
+                                style={errors.house_name && touched.house_name ? { borderColor: "red" } : {}}
+                            />
+                            {errors.house_name && touched.house_name ? <p className="error-message">{errors.house_name}</p> : ""}
+                        </div>
                         <div className="form-group col-md-6">
                             <label for="size" className="form-label">Size</label>
                             <input
@@ -101,7 +138,7 @@ const Form = () => {
                         </div>
 
                     </div>
-                    <button disabled={isSubmitting} type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
         </>

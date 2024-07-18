@@ -24,6 +24,7 @@ a:hover {
 
 body {
   margin: 0;
+  display: flex;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,31 +66,14 @@ button:focus-visible {
   }
 }
 
-.updatedNav{
-  background-color: #e3f2fd;
+#root {
+  margin-top: 70px;
+  padding-top: 20px;
 }
-
-.houseContainer{
-  margin-top: 10px;
-}
-
-.dislikes {
-  float: right;
-}
-
-.exp {
-  color:red;
-}
-.cheap {
-  color:green;
-}
-
-
-.form-area {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 5px;
-  width: 50%
+#holder-container {
+  width: 90vw;
+  height: 100%;
+  left: 40%;
+  transform: translateX(-1%);
 }
 

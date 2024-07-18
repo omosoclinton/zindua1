@@ -9,6 +9,8 @@ import Landing from './pages/Landing.jsx';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Modal from './components/Modal.jsx';
 import Form from './components/Form.jsx';
+import Login from './components/Login.jsx';
+import Register from './components/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path:'/modalform',
     element:<Form/>
+  },
+  {
+    path:'/register',
+    element:<Register/>
+  },
+  {
+    path:'/login',
+    element:<Login/>
   }
 ])
 
