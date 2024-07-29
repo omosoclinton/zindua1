@@ -7,10 +7,14 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Home from './pages/Home.jsx';
 import Landing from './pages/Landing.jsx';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Modal from './components/Modal.jsx';
+
 import Form from './components/Form.jsx';
 import Login from './components/Login.jsx';
 import Register from './components/Register.jsx';
+import UpdateHouse from './components/UpdateHouse.jsx';
+import PillsNavs from './components/LoginFake.jsx';
+import FullComponent from './components/pillsmdb/FullComponent.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -32,7 +36,11 @@ const router = createBrowserRouter([
   {
     path:'/login',
     element:<Login/>
-  }
+  },
+  {
+    path:'/update',
+    element:<UpdateHouse/>
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

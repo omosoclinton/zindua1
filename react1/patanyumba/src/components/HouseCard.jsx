@@ -24,6 +24,7 @@ const Housecard = ({house}) =>{
                     <img src={house.image_url} className="card-img-top" alt="house image" />
                     <div className="card-body">
                         <h5 className="card-title">{house.house_name}</h5>
+                        <p>{house.size}</p>
                         {/* Likes and dislikes */}
                         <div className="container">
                             <div className="row">
@@ -49,7 +50,7 @@ const Housecard = ({house}) =>{
                         <p className={house.price > 30000 ? "exp":"cheap"}>Category: {house.price > 30000 ? "Expensive" : "Affordable"}</p>
                         <h6 className="card-title">Location: {house.location}</h6>
                         <Modal/>
-                        {/* <Link type="button" className="btn btn-primary" to='/modalform'>Get House</Link> */}
+                        <Link type="button" className="btn btn-info-secondary" to='/update' style={{marginLeft:'5px'}} state={house}>Update House</Link>
                     </div>
                 </div>
                     : <div>

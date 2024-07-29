@@ -11,6 +11,7 @@ function Login() {
     const navigate = useNavigate()
     const onSubmit = async () => {
         const db = getDatabase(app)
+        console.log(ref(db))
         const docRef = ref(db, `patanyumba/users/${values.username}`)
         const snapshot = await get(docRef)
         if (snapshot.exists()){

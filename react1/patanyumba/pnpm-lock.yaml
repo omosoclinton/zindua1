@@ -10,13 +10,19 @@ importers:
     dependencies:
       bootstrap:
         specifier: 5.3.3
-        version: 5.3.3(@popperjs/core@2.11.8)
+        version: 5.3.3(@popperjs/core@2.11.5)
       firebase:
         specifier: ^10.12.3
         version: 10.12.3
       formik:
         specifier: ^2.4.6
         version: 2.4.6(react@18.3.1)
+      mdb-react-ui-kit:
+        specifier: ^8.0.0
+        version: 8.0.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      mdb-ui-kit:
+        specifier: ^7.3.2
+        version: 7.3.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -59,6 +65,12 @@ importers:
         version: 5.3.3(@types/node@20.14.10)
 
 packages:
+
+  '@emotion/is-prop-valid@0.8.8':
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+
+  '@emotion/memoize@0.7.4':
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -443,8 +455,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@popperjs/core@2.11.8':
-    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+  '@popperjs/core@2.11.5':
+    resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
 
   '@protobufjs/aspromise@1.1.2':
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
@@ -747,6 +759,10 @@ packages:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
 
+  clsx@1.1.1:
+    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+    engines: {node: '>=6'}
+
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -950,6 +966,17 @@ packages:
     resolution: {integrity: sha512-A+2EI7U7aG296q2TLGvNapDNTZp1khVt5Vk0Q/fyfSROss0V/V6+txt2aJnwEos44IxTCW/LYAi/zgWzlevj+g==}
     peerDependencies:
       react: '>=16.8.0'
+
+  framer-motion@10.18.0:
+    resolution: {integrity: sha512-oGlDh1Q1XqYPksuTD/usb0I70hq95OUzmL9+6Zd+Hs4XV0oaISBa/UUMSjYiq6m8EUF32132mOJ8xVZS+I0S6w==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
@@ -1228,6 +1255,17 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
+  mdb-react-ui-kit@8.0.0:
+    resolution: {integrity: sha512-4XnfUv/SkMGhKbSUcEqNgNBYz009YEPHuweodher7ba70NlbnKlfgCxXolZPX5WUPYtsV2IjDRMxu3+oLnjzTQ==}
+    peerDependencies:
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      react: ^18.1.0
+      react-dom: ^18.1.0
+
+  mdb-ui-kit@7.3.2:
+    resolution: {integrity: sha512-iFng2p5Tfx/IKMEAxG2/pFTDPPS0FQ5xossQkuV9TFUaMAxtOlTbRgogfachBabC6A35xyJmA6ZWFeblTPJnEw==}
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -1348,8 +1386,18 @@ packages:
   react-fast-compare@2.0.4:
     resolution: {integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==}
 
+  react-fast-compare@3.2.2:
+    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-popper@2.3.0:
+    resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
+    peerDependencies:
+      '@popperjs/core': ^2.0.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: ^16.8.0 || ^17 || ^18
 
   react-router-dom@6.24.1:
     resolution: {integrity: sha512-U19KtXqooqw967Vw0Qcn5cOvrX5Ejo9ORmOtJMzYWtCT4/WOfFLIZGGsVLxcd9UkBO0mSTZtXqhZBsWlHr7+Sg==}
@@ -1576,6 +1624,9 @@ packages:
       terser:
         optional: true
 
+  warning@4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+
   websocket-driver@0.7.4:
     resolution: {integrity: sha512-b17KeDIQVjvb0ssuSDF2cYXSg2iztliJ4B9WdsuB6J952qCPKmnVq4DyW5motImXHDC1cBT/1UezrJVsKw5zjg==}
     engines: {node: '>=0.8.0'}
@@ -1642,6 +1693,14 @@ packages:
     resolution: {integrity: sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg==}
 
 snapshots:
+
+  '@emotion/is-prop-valid@0.8.8':
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    optional: true
+
+  '@emotion/memoize@0.7.4':
+    optional: true
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
@@ -2086,7 +2145,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@popperjs/core@2.11.8': {}
+  '@popperjs/core@2.11.5': {}
 
   '@protobufjs/aspromise@1.1.2': {}
 
@@ -2334,9 +2393,9 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  bootstrap@5.3.3(@popperjs/core@2.11.8):
+  bootstrap@5.3.3(@popperjs/core@2.11.5):
     dependencies:
-      '@popperjs/core': 2.11.8
+      '@popperjs/core': 2.11.5
 
   brace-expansion@1.1.11:
     dependencies:
@@ -2363,6 +2422,8 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+
+  clsx@1.1.1: {}
 
   color-convert@2.0.1:
     dependencies:
@@ -2729,6 +2790,14 @@ snapshots:
       tiny-warning: 1.0.3
       tslib: 2.6.3
 
+  framer-motion@10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      tslib: 2.6.3
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   fs.realpath@1.0.0: {}
 
   fsevents@2.3.3:
@@ -2993,6 +3062,19 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
+  mdb-react-ui-kit@8.0.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@popperjs/core': 2.11.5
+      '@types/react': 18.3.3
+      '@types/react-dom': 18.3.0
+      clsx: 1.1.1
+      framer-motion: 10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-popper: 2.3.0(@popperjs/core@2.11.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+
+  mdb-ui-kit@7.3.2: {}
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
@@ -3121,7 +3203,17 @@ snapshots:
 
   react-fast-compare@2.0.4: {}
 
+  react-fast-compare@3.2.2: {}
+
   react-is@16.13.1: {}
+
+  react-popper@2.3.0(@popperjs/core@2.11.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@popperjs/core': 2.11.5
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-fast-compare: 3.2.2
+      warning: 4.0.3
 
   react-router-dom@6.24.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -3387,6 +3479,10 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.14.10
       fsevents: 2.3.3
+
+  warning@4.0.3:
+    dependencies:
+      loose-envify: 1.4.0
 
   websocket-driver@0.7.4:
     dependencies:

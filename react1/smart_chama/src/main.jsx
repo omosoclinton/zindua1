@@ -8,7 +8,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import LandingPage from './components/Landing.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Login from './components/Login.jsx'
-import Account from './assets/pages/Account.jsx'
+import UserPage from './pages/UserPage.jsx'
+import AccountComponent from './components/accounts/AccountsComponent.jsx'
+import AuthProvider from './AuthProvider.jsx'
+import UserMoreDetails from './components/UserMore.jsx'
+import UpdateAccount from './components/UpdateUser.jsx'
+import UserLanding from './components/UserLanding.jsx'
+import Events from './pages/Events.jsx'
 
 
 const router = createBrowserRouter([
@@ -17,17 +23,44 @@ const router = createBrowserRouter([
     element:<LandingPage />
   },
   {
-    path:'/account',
-    element:<Account/>
-  },
-  {
     path:'/login',
     element:<Login/>
-  }
+  },
+  ,
+  {
+    path:'/user',
+    element:<UserLanding/>
+  },
+  {
+    path:'/accounts',
+    element:<AccountComponent/>
+  },
+  {
+    path:'/financials',
+    element:<Events/>
+  },
+  {
+    path:'/viewmore',
+    element:<UserMoreDetails/>
+  },
+  {
+    path:'/updateuser',
+    element:<UpdateAccount/>
+  },
+  {
+    path:'/userpage',
+    element:<UserPage/>
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router = {router} />
+    <AuthProvider>{<RouterProvider router = {router} />}</AuthProvider>
   </React.StrictMode>,
 )
+
+
+
+{
+  // 
+}

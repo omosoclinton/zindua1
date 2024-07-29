@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
 
-    const navigate = useNavigate
+    const navigate = useNavigate()
     const userExists = async (username) => {
         const db = getDatabase(app)
         const docRef = ref(db, `patanyumba/users/${username}`)

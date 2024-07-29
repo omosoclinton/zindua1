@@ -9,11 +9,10 @@ const Navbar = () => {
             <header className="site-header">
                 <nav className="navbar navbar-expand-md navbar-dark" style={{ backgroundColor: '#244855', padding: '10px', color: 'black' }}>
                     <div className="container-fluid">
-                        <a className="navbar-brand">PataNyumba</a>
+                        <Link className="navbar-brand" to='/'>PataNyumba</Link>
                         <ul>
-                            <Modal />
-                            <Link to="/houses" className="btn btn-primary" style={{ margin: '10px' }}>Houses</Link>
-                            <Link to="/" className="btn btn-primary">Home</Link>
+                            <Link to="/login" className="btn btn-primary" style={{ marginLeft: '10px', marginRight: '10px',}}>Login</Link>
+                            <Link to="/register" className="btn btn-primary">REGISTER</Link>
                         </ul>
                     </div>
                 </nav>

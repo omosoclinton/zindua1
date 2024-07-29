@@ -9,6 +9,7 @@ import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyAObIrcFYoF3q3HlH_puOKWTDxb3Q43gKw",
   authDomain: "smartchama-bc1c0.firebaseapp.com",
+  databaseURL: "https://smartchama-bc1c0-default-rtdb.europe-west1.firebasedatabase.app/",
   projectId: "smartchama-bc1c0",
   storageBucket: "smartchama-bc1c0.appspot.com",
   messagingSenderId: "375377495299",

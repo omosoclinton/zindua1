@@ -1,3 +1,6 @@
+@import 'mdb-ui-kit/css/mdb.min.css';
+@import 'mdb-ui-kit/css/mdb.min.css';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -69,11 +72,30 @@ button:focus-visible {
 #root {
   margin-top: 70px;
   padding-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }
 #holder-container {
-  width: 90vw;
-  height: 100%;
-  left: 40%;
-  transform: translateX(-1%);
+  margin: 20px;
+  padding: 20px;
+
+}
+.form-area {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+   align-items: center;
+  justify-content: center;
+  
+}
+
+#accounts {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+
+.createRow {
+  max-width: 50%;
 }
 
