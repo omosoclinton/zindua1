@@ -22,3 +22,7 @@ def greet(name):
 
 greet("Clin")
 
+def someFunc(**kwargs):
+    print(kwargs)
+
+someFunc(5,6,7)
