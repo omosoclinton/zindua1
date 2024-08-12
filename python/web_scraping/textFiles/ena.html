@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>ENA Coach</title>
+<link href="dest/output.css" rel="stylesheet"/>
+<link href="dest/output.css?v=0.0.0.0.0.5" rel="stylesheet"/>
+<link href="dest/font-awesome.min.css" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Muli:300,400,400i,700,700i|Nunito:400,700,900" media="all" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="dest/Roboto+Condensed.css" rel="stylesheet" type="text/css">
+<base href="/"/>
+<style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+        </style>
+</link></head>
+<body ng-app="ENAApp" ng-class="{test :continue}" ng-cloak="" ng-controller="parentController" ng-csp="no-unsafe-eval">
+<toast></toast>
+<div class="row" style="background-color:#000;padding-top: 10px;padding-bottom: 10px;text-align: right">
+<a href="https://www.facebook.com/MyEnaCoach" target="_blank"><i class="fa fa-facebook pointer" style="color:#fff;font-size:20px;padding-right: 25px"></i></a>
+<a href="https://twitter.com/EnaCoach" target="_blank"><i class="fa fa-twitter pointer" style="color:#fff;font-size:20px;padding-right: 25px"></i></a>
+<a href="https://www.instagram.com/EnaCoach" target="_blank"><i class="fa fa-instagram pointer" style="color:#fff;font-size:20px;padding-right: 15px"></i></a>
+</div>
+<div class="row" style="background-color: #242424;padding-bottom: 20px;">
+<div class="col-lg-5 col-xs-6" style="position:relative;"><img src="assets/big-logo.png" style="width: 80%;position: absolute;top:-25px"/></div>
+<div class="col-lg-7 col-xs-6"><img src="assets/amenity.png" style="width: 300px;"/></div>
+</div>
+<nav class="navbar navbar-default">
+<div class="container-fluid" style="padding: 0 73px;">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav">
+<li><a class="menu-font" ui-sref="home">Home</a></li>
+<li><a class="menu-font" ui-sref="about">About Us</a></li>
+<li><a class="menu-font" ui-sref="contact">Contact Us</a></li>
+<li><a class="menu-font" ui-sref="printticket">Print Ticket</a></li>
+<li><a class="menu-font" ui-sref="gallery">Gallery</a></li>
+<li class="menu-font">
+<a class="color pointer" ng-click="openModal()" ng-if="!$root.isLogin">Sign In / Register</a></li>
+<li class="dropdown pointer" ng-if="$root.isLogin"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user-circle-o" style="font-size:25px"></i><span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="padding-top-bottom-2"><a ng-click="goProfile('0')">My Trips</a></li>
+<li class="padding-top-bottom-2"><a ng-click="goProfile('2')">My Profile</a></li>
+<li class="padding-top-bottom-2"><a ng-click="goProfile('3')">Change Password</a></li>
+<li class="padding-top-bottom-2"><a ng-click="goProfile('1')">Wallet</a></li>
+<li class="padding-top-bottom-2"><a ng-click="signOut()">Sign Out</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container" style="min-height: 430px">
+<ui-view></ui-view>
+</div>
+<footer class="footer">
+<div class="row" style="background-color: #000;padding-top: 12px;padding-bottom: 10px;color:#cbcbcb">
+<div class="col-lg-2">
+                Copyright <span class="copyightsymbolcircle" style="margin-right:5px">C</span>{{date| date:'yyyy'}}
+            </div>
+<div class="col-lg-6" style="text-align: center">
+<span style="border-right: solid 1px #ddd;padding-right: 5px;font-size:16px"><b><a style="color:#cbcbcb" ui-sref="privacypolicy">Privacy Policy</a></b></span>
+<span style="font-size:16px"><b><a style="color:#cbcbcb" ui-sref="termcondition">Terms &amp; Conditions</a></b></span>
+</div>
+<div class="col-lg-4" style="text-align: right">
+<span style="border-right: solid 1px #ddd;padding-right: 3px"><a style="color:#cbcbcb" ui-sref="home">Home</a></span>
+<span style="border-right: solid 1px #ddd;padding-right: 3px"><a style="color:#cbcbcb" ui-sref="about">About</a></span>
+<span style="border-right: solid 1px #ddd;padding-right: 3px"><a style="color:#cbcbcb" ui-sref="printticket">Print Ticket</a></span>
+<span><a style="color:#cbcbcb" ui-sref="contact">Contact Us</a></span>
+</div>
+</div>
+</footer>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5d52849177aa790be32eaca9/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+<!--End of Tawk.to Script-->
+<script src="dest/output.js?v=0.0.0.0.2.1" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script src="dest/templates.js?v=0.0.0.0.2.2" type="text/javascript"></script>
+<!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+</body>
+</html>
