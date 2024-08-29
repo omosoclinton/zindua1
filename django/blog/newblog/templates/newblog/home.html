@@ -1,0 +1,13 @@
+{% extends "newblog/base.html" %}
+{% block content %}
+    <h1>HOME PAGE</h1>
+    <div>
+        {% for post in posts %}
+           <h3>{{post.title}}</h3>
+           <p>Author: {{post.author.username}}</p>
+           <p>{{post.content}}</p>
+           <p>Posted at: {{post.date_posted}}</p>
+        {% endfor %}
+    </div>
+{% endblock content %}
+

@@ -1,0 +1,27 @@
+{% extends "ems_app/base.html" %}
+{% block content %}
+<h1>Employee Management System</h1>
+<div>
+    {% for employee in employees %}
+    <div class="card" style="width: 18rem; margin: 10px;">
+        <div class="card-body">
+            <h3> {{employee.name}} </h3>
+            <p>Role: {{ employee.role }} </p>
+            <p>Salary: {{ employee.salary }} </p>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock content %}
+
+
+<!-- 
+{
+        "name":"Booker T. Dryington",
+        "employee_id":4,
+        "salary":8000,
+        "role":"General Manager"
+    }
+
+-->
