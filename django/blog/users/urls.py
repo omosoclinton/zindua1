@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+#path('about/', views.about, name='blog-about' ),
 urlpatterns = [
-
+    path('profile/', views.userProfile, name="users-profile")
 ]

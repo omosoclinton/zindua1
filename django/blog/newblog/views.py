@@ -4,7 +4,7 @@ from .models import Post
 # Create your views here.
 
 def home(requests):
-    print("Hello, this is the home page")
+    print()
     context ={
         "posts":Post.objects.all(),
         "title":"Blog Posts"
