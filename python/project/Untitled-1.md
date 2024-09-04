@@ -1,0 +1,4 @@
+What is the primary focus of the video? For example, is it to drive registrations, highlight the importance of the event, or showcase the key partners and sponsors? - The primary focus is to encourage registrations
+Who is your target audience? Are you targeting professionals in the tech industry, members of the diaspora, or a more general audience? - I'm targeting professional audience in the tech industry, even students in the IT world are a target.
+What tone or mood are you aiming for? Should the video be inspiring and motivational, or more informational and straightforward? - The tone is more on the motivational side
+How long would you like the video to be? We can create a short teaser (10-20 seconds) or a more detailed video (up to 1 minute). The video should be 3o seconds long

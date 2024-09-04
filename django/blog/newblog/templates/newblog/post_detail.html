@@ -18,7 +18,7 @@
                 <a type="button" class="btn btn-info" href="{% url 'post-update' post.pk %}">Update</a>
             </div>
             <div class="col-md-1" style="margin: 5px;" >
-                <a type="button" class="btn btn-danger">Delete</a>
+                <a type="button" class="btn btn-danger" href="{% url 'post-delete' post.pk %}">Delete</a>
             </div>
         </div>
         {% endif %}
