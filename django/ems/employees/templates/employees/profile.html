@@ -5,22 +5,20 @@
 <div class="">
     <div class="border-top pt-3">
         {% for employee in employees %}
-        {% if employee.user.username == user.username %}
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{employee.full_name}}</h5>
-                <p class="card-text">This is your user profile. It will show your department and your role in the
-                    company</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Department - {{employee.department}}</li>
-                <li class="list-group-item">Role - {{employee.role}}</li>
-            </ul>
-        </div>
-        {% else%}
-        <h3>Not an Employee</h3>
-        {% endif %}
+            {% if employee.user.username == user.username %}
+                <div class="card" style="width: 18rem;">
+                    <img class="rounded-circle article-img" src="{{ employee.profileImage.url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{employee.user.username}}</h5>
+                        <p class="card-text">This is your user profile. It will show your department and your role in the
+                            company</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Department - {{employee.role.department}}</li>
+                        <li class="list-group-item">Role - {{employee.role}}</li>
+                    </ul>
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
 

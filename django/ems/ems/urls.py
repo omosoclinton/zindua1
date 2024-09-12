@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from employees import views as employee_views
+from ems_app import views as ems_app_views
 from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -25,9 +28,14 @@ urlpatterns = [
     path('ems/', include('ems_app.urls')),  
     path("login/", auth_views.LoginView.as_view(template_name='employees/login.html'), name='employee-login'),
     path("logout/", auth_views.LogoutView.as_view(template_name='employees/logout.html'), name='employee-logout'),
-    #path('profile/', employee_views.employeeProfile, name="employee-profile"),
     path('profile/', employee_views.userProfile, name="employee-profile"),
     path('register/', employee_views.employeeRegistration, name="register-employee"),
+    path('manage/', ems_app_views.manage, name="manage"),
+    path('departments/', ems_app_views.DepartmentListView.as_view(), name='departments'),
+    path('roles/', ems_app_views.RoleListView.as_view(), name='roles'),
+    path('employees/', ems_app_views.EmployeeListView.as_view(), name='employees'),
+    path('form/', ems_app_views.form, name="form"),
+    #path('employees/', ems_app_views.EmployeeListView.as_view(), name='employees'),
     path('employees', include('employees.urls'))
 
-]
+] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

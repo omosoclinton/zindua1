@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from PIL import Image
 
 # Create your models here.
 # Department will have department name
@@ -20,13 +21,26 @@ class Role(models.Model):
         return self.role
 
 class Employee(models.Model):
-    full_name = models.CharField(max_length=250)
     hire_date = models.DateField()
     salary = models.DecimalField(max_digits=10, decimal_places=2)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department,null=True, on_delete=models.SET_NULL)
     role = models.ForeignKey(Role,null=True, on_delete=models.SET_NULL)
+    profileImage = models.ImageField(default="profile_pics/default.jpg", upload_to="profile_pics")
 
     def __str__(self):
-        return self.full_name
+        return self.user.username
+    
+    def save(self, *args, **kwargs):
+        super(Employee, self).save(*args, **kwargs)
+
+        img = Image.open(self.profileImage.path)
+
+        if img.height > 300 and img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
+    
+
     
 

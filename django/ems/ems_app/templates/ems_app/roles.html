@@ -1,0 +1,22 @@
+{% extends "ems_app/base.html" %}
+{% block content %}
+<h1>Employee Management System</h1>
+<div>
+    {% for role in roles %}
+    <div class="card" style="width: 18rem; margin: 10px;">
+        <div class="card-body">
+            <h3> {{role.role}} </h3>
+        </div>
+        <div class="row justify-content-left">
+            <div class="col-md-3" style="margin: 5px;">
+                <a type="button" class="btn btn-info" href="{% url 'roles-update' role.pk %}">Update</a>
+            </div>
+            <div class="col-md-3" style="margin: 5px;" >
+                <a type="button" class="btn btn-danger" href="{% url 'roles-delete' role.pk %}">Delete</a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock content %}

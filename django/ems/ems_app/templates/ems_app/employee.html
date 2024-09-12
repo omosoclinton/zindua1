@@ -1,0 +1,36 @@
+{% extends "ems_app/base.html" %}
+
+{% block content %}
+<h1>Employee Management System</h1>
+<div class="container">
+   <div class="row">
+    <div class="col-md-8">
+        {% for employee in employees %}
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ employee.profileImage.url }}">
+            <div class="media-body card">
+                <div class="article-metadata">
+                    <a class="mr-2" href="">{{employee.user.username }}</a>
+                </div>
+                <h2><a class="article-title" href="">{{ employee.salary}}</a></h2>
+                <p class="article-content">{{ employee.role}}</p>
+            </div>
+            <div class="row justify-content-left">
+                <div class="col-md-3" style="margin: 5px;">
+                    <a type="button" class="btn btn-info" href="{% url 'employee-update' employee.pk %}">Update</a>
+                </div>
+                <div class="col-md-3" style="margin: 5px;" >
+                    <a type="button" class="btn btn-danger" href="{% url 'employee-delete' employee.pk %}">Delete</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+   </div>
+</div>
+{% endblock content %}
+
+<!-- 
+{% load render_table from django_tables2 %}
+{% render_table table %} 
+-->

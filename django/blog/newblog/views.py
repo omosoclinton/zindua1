@@ -1,6 +1,5 @@
 from django.forms import BaseModelForm
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import Post
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
@@ -24,13 +23,14 @@ class PostListView(ListView):
     template_name = 'newblog/home.html'
     context_object_name = "posts"
     ordering = ['-date_posted']
+    paginate_by = 3
 
 class PostDetailView(DetailView):
     model = Post
 
 class PostCreateView(UserPassesTestMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title','excerpt', 'content']
     template_name = "newblog/create_post.html"
 
 
@@ -44,9 +44,9 @@ class PostCreateView(UserPassesTestMixin, CreateView):
             return True
         return False
 
-class PostUpdateView( UserPassesTestMixin,UpdateView):
+class PostUpdateView( UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title','excerpt', 'content']
     template_name = "newblog/create_post.html"
 
     def test_func(self):

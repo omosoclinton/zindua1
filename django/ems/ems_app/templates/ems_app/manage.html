@@ -1,0 +1,65 @@
+{% extends "ems_app/base.html" %}
+{% block content %}
+<div>
+    <h1>Manage Your Employees</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="{% url 'department-create' %}">Add a department</a></li>
+                    <li class="list-group-item"><a href="{% url 'roles-create' %}">Add a role</a></li>
+                    <li class="list-group-item"><a href="{% url 'user-create' %}">Create a user </a></li>
+                    <li class="list-group-item"><a href="{% url 'employee-create' %}">Add an Employee</a></li>
+                    <li class="list-group-item"><a href="#">My Posts</a></li>
+                </ul>
+            </div>
+           <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Department</h5>
+                  <p class="card-text">Manage your departments from here - view, add, delete or update</p>
+                  <a type="button" href="{% url 'departments' %}" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+                </div>
+              </div>
+           </div>
+           <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Roles</h5>
+                  <p class="card-text">Manage all roles from here - view, add, delete or update</p>
+                  <a type="button" href="{% url 'roles' %}" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+                </div>
+              </div>
+           </div>
+           <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Employees</h5>
+                  <p class="card-text">Manage your employees from here - view, add, delete or update</p>
+                  <a type="button" href="{% url 'employees' %}" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+                </div>
+              </div>
+           </div>
+           <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a type="button" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+                </div>
+              </div>
+           </div>
+           <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a type="button" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+                </div>
+              </div>
+           </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

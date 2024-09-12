@@ -1,0 +1,24 @@
+{% extends "ems_app/base.html" %}
+{% block content %}
+<h1>Departments</h1>
+<div class="container">
+    {% for department in departments %}
+        <div class="card" style="width: 25rem; margin: 10px;">
+            <div class="card-body">
+                <h2>{{department.department_name}}</h2>
+            </div>
+            <div class="row justify-content-left">
+                <div class="col-md-3" style="margin: 5px;">
+                    <a type="button" class="btn btn-info" href="{% url 'department-update' department.pk %}">Update</a>
+                </div>
+                <div class="col-md-3" style="margin: 5px;" >
+                    <a type="button" class="btn btn-danger" href="{% url 'department-delete' department.pk %}">Delete</a>
+                </div>
+                <div class="col-md-5" style="margin: 5px;" >
+                    <a type="button" class="btn btn-secondary" href="{% url 'department-employees' department.pk %}">View Employees</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}
